@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Fair - Your Go-To Multi-Tool Website</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- QR Code JS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode.js/1.0.0/qrcode.min.js"></script>
+    <!-- Marked JS for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e0e0e0;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        /* Style for Markdown preview */
+        .markdown-preview h1 { font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; }
+        .markdown-preview h2 { font-size: 2rem; font-weight: bold; margin-bottom: 0.8rem; }
+        .markdown-preview h3 { font-size: 1.75rem; font-weight: bold; margin-bottom: 0.6rem; }
+        .markdown-preview p { margin-bottom: 1rem; line-height: 1.6; }
+        .markdown-preview ul, .markdown-preview ol { list-style-position: inside; margin-bottom: 1rem; padding-left: 1.5rem; }
+        .markdown-preview ul li { list-style-type: disc; }
+        .markdown-preview ol li { list-style-type: decimal; }
+        .markdown-preview code { background-color: #e2e8f0; padding: 0.2em 0.4em; border-radius: 0.3em; font-family: monospace; }
+        .markdown-preview pre { background-color: #2d3748; color: #cbd5e0; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; margin-bottom: 1rem; }
+        .markdown-preview blockquote { border-left: 4px solid #a0aec0; padding-left: 1rem; color: #4a5568; margin-bottom: 1rem; }
+        .markdown-preview table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
+        .markdown-preview th, .markdown-preview td { border: 1px solid #e2e8f0; padding: 0.75rem; text-align: left; }
+        .markdown-preview th { background-color: #edf2f7; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 shadow-lg sticky top-0 z-40">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-3xl font-bold rounded-lg p-2">Tool Fair</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="hover:text-blue-200 transition duration-300">Home</a></li>
+                    <li><a href="#tools" class="hover:text-blue-200 transition duration-300">Tools</a></li>
+                    <li><a href="#about" class="hover:text-blue-200 transition duration-300">About</a></li>
+                    <li><a href="#contact" class="hover:text-blue-200 transition duration-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="bg-gradient-to-br from-blue-500 to-purple-500 text-white py-20 md:py-32 text-center shadow-inner">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl md:text-6xl font-extrabold mb-6 animate-fade-in-down">
+                Your Ultimate Collection of Online Tools
+            </h2>
+            <p class="text-xl md:text-2xl mb-10 opacity-90 animate-fade-in-up">
+                Simplify your daily tasks with our versatile and easy-to-use utilities.
+            </p>
+            <a href="#tools" class="bg-white text-blue-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105">
+                Explore Tools
+            </a>
+        </div>
+    </section>
+
+    <!-- Main Content Area - Tools Section -->
+    <main id="tools" class="flex-grow container mx-auto p-6 md:p-10">
+        <h2 class="text-4xl font-extrabold text-gray-800 text-center mb-12">Explore Our Powerful Tools</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+            <!-- Tool Card 1: Text Manipulator -->
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                <div class="p-6">
+                    <div class="text-5xl text-blue-500 mb-4 text-center">
+                        <i class="fas fa-font"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">Text Manipulator</h3>
+                    <p class="text-gray-600 text-center mb-6">
+                        Case conversion, word count, character count, and more.
+                    </p>
+                    <button onclick="showTool('text-manipulator-tool')" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                        Use Tool
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tool Card 2: Unit Converter -->
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                <div class="p-6">
+                    <div class="text-5xl text-green-500 mb-4 text-center">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">Unit Converter</h3>
+                    <p class="text-gray-600 text-center mb-6">
+                        Convert lengths, weights, temperatures, and many other units.
+                    </p>
+                    <button onclick="showTool('unit-converter-tool')" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                        Use Tool
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tool Card 3: Image Resizer -->
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                <div class="p-6">
+                    <div class="text-5xl text-red-500 mb-4 text-center">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">Image Resizer</h3>
+                    <p class="text-gray-600 text-center mb-6">
+                        Resize images quickly and efficiently without quality loss.
+                    </p>
+                    <button onclick="showTool('image-resizer-tool')" class="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                        Use Tool
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tool Card 4: QR Code Generator -->
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                <div class="p-6">
+                    <div class="text-5xl text-purple-500 mb-4 text-center">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">QR Code Generator</h3>
+                    <p class="text-gray-600 text-center mb-6">
+                        Create custom QR codes for URLs, text, Wi-Fi, and more.
+                    </p>
+                    <button onclick="showTool('qr-code-generator-tool')" class="w-full bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                        Use Tool
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tool Card 5: Password Generator -->
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                <div class="p-6">
+                    <div class="text-5xl text-yellow-500 mb-4 text-center">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">Password Generator</h3>
+                    <p class="text-gray-600 text-center mb-6">
+                        Generate strong, random passwords for enhanced security.
+                    </p>
+                    <button onclick="showTool('password-generator-tool')" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                        Use Tool
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tool Card 6: Color Picker -->
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                <div class="p-6">
+                    <div class="text-5xl text-pink-500 mb-4 text-center">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">Color Picker</h3>
+                    <p class="text-gray-600 text-center mb-6">
+                        Find HEX, RGB, HSL values for any color on the screen.
+                    </p>
+                    <button onclick="showTool('color-picker-tool')" class="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                        Use Tool
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tool Card 7: Markdown Editor -->
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                <div class="p-6">
+                    <div class="text-5xl text-teal-500 mb-4 text-center">
+                        <i class="fab fa-markdown"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">Markdown Editor</h3>
+                    <p class="text-gray-600 text-center mb-6">
+                        Write and preview Markdown in real-time.
+                    </p>
+                    <button onclick="showTool('markdown-editor-tool')" class="w-full bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                        Use Tool
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tool Card 8: JSON Formatter -->
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                <div class="p-6">
+                    <div class="text-5xl text-indigo-500 mb-4 text-center">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">JSON Formatter</h3>
+                    <p class="text-gray-600 text-center mb-6">
+                        Beautify and validate your JSON data effortlessly.
+                    </p>
+                    <button onclick="showTool('json-formatter-tool')" class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                        Use Tool
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Tool Sections (initially hidden) -->
+    <section id="tool-sections-container" class="container mx-auto p-6 md:p-10 hidden">
+
+        <!-- Text Manipulator Tool Section -->
+        <div id="text-manipulator-tool" class="bg-white rounded-xl shadow-lg p-8 mb-10 hidden">
+            <h3 class="text-3xl font-bold text-gray-900 mb-6 text-center">Text Manipulator</h3>
+            <div class="mb-6">
+                <label for="textInput" class="block text-gray-700 text-lg font-semibold mb-2">Enter your text:</label>
+                <textarea id="textInput" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" rows="8" placeholder="Type or paste your text here..."></textarea>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                <button onclick="toUpperCase()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                    Convert to Uppercase
+                </button>
+                <button onclick="toLowerCase()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                    Convert to Lowercase
+                </button>
+                <button onclick="toTitleCase()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                    Convert to Title Case
+                </button>
+                <button onclick="countWords()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                    Word Count
+                </button>
+                <button onclick="countCharacters()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                    Character Count
+                </button>
+                <button onclick="reverseText()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                    Reverse Text
+                </button>
+            </div>
+            <div class="mt-6 p-4 bg-gray-100 rounded-lg border border-gray-200">
+                <label for="textOutput" class="block text-gray-700 text-lg font-semibold mb-2">Result:</label>
+                <textarea id="textOutput" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg text-gray-800" rows="6" readonly></textarea>
+                <button onclick="copyToClipboard('textOutput')" class="mt-4 bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-lg transition duration-300 shadow-md">
+                    Copy to Clipboard
+                </button>
+            </div>
+            <button onclick="hideTool('text-manipulator-tool')" class="mt-8 w-full bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                Back to Tools
+            </button>
+        </div>
+
+        <!-- Unit Converter Tool Section -->
+        <div id="unit-converter-tool" class="bg-white rounded-xl shadow-lg p-8 mb-10 hidden">
+            <h3 class="text-3xl font-bold text-gray-900 mb-6 text-center">Unit Converter</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <label for="unitValue" class="block text-gray-700 text-lg font-semibold mb-2">Value:</label>
+                    <input type="number" id="unitValue" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-800" placeholder="Enter value">
+                </div>
+                <div>
+                    <label for="unitType" class="block text-gray-700 text-lg font-semibold mb-2">Unit Type:</label>
+                    <select id="unitType" onchange="populateUnits()" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-800">
+                        <option value="">Select Type</option>
+                        <option value="length">Length</option>
+                        <option value="temperature">Temperature</option>
+                        <option value="weight">Weight</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="fromUnit" class="block text-gray-700 text-lg font-semibold mb-2">From Unit:</label>
+                    <select id="fromUnit" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-800">
+                        <option value="">Select Unit</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="toUnit" class="block text-gray-700 text-lg font-semibold mb-2">To Unit:</label>
+                    <select id="toUnit" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-800">
+                        <option value="">Select Unit</option>
+                    </select>
+                </div>
+            </div>
+            <button onclick="convertUnit()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg mb-6">
+                Convert
+            </button>
+            <div class="mt-6 p-4 bg-gray-100 rounded-lg border border-gray-200">
+                <label for="unitResult" class="block text-gray-700 text-lg font-semibold mb-2">Result:</label>
+                <input type="text" id="unitResult" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg text-gray-800" readonly>
+                <button onclick="copyToClipboard('unitResult')" class="mt-4 bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-lg transition duration-300 shadow-md">
+                    Copy to Clipboard
+                </button>
+            </div>
+            <button onclick="hideTool('unit-converter-tool')" class="mt-8 w-full bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                Back to Tools
+            </button>
+        </div>
+
+        <!-- Image Resizer Tool Section -->
+        <div id="image-resizer-tool" class="bg-white rounded-xl shadow-lg p-8 mb-10 hidden">
+            <h3 class="text-3xl font-bold text-gray-900 mb-6 text-center">Image Resizer</h3>
+            <div class="mb-6">
+                <label for="imageUpload" class="block text-gray-700 text-lg font-semibold mb-2">Upload Image:</label>
+                <input type="file" id="imageUpload" accept="image/*" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-800">
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div>
+                    <label for="newWidth" class="block text-gray-700 text-lg font-semibold mb-2">New Width (px):</label>
+                    <input type="number" id="newWidth" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-800" placeholder="e.g., 300">
+                </div>
+                <div>
+                    <label for="newHeight" class="block text-gray-700 text-lg font-semibold mb-2">New Height (px):</label>
+                    <input type="number" id="newHeight" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-800" placeholder="e.g., 200">
+                </div>
+            </div>
+            <button onclick="resizeImage()" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg mb-6">
+                Resize Image
+            </button>
+            <div class="mt-6 p-4 bg-gray-100 rounded-lg border border-gray-200 text-center">
+                <label class="block text-gray-700 text-lg font-semibold mb-2">Resized Image:</label>
+                <canvas id="imageCanvas" class="max-w-full h-auto border border-gray-300 rounded-lg mx-auto"></canvas>
+                <a id="downloadResizedImage" download="resized_image.png" class="mt-4 inline-block bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-lg transition duration-300 shadow-md hidden">
+                    Download Image
+                </a>
+            </div>
+            <button onclick="hideTool('image-resizer-tool')" class="mt-8 w-full bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                Back to Tools
+            </button>
+        </div>
+
+        <!-- QR Code Generator Tool Section -->
+        <div id="qr-code-generator-tool" class="bg-white rounded-xl shadow-lg p-8 mb-10 hidden">
+            <h3 class="text-3xl font-bold text-gray-900 mb-6 text-center">QR Code Generator</h3>
+            <div class="mb-6">
+                <label for="qrTextInput" class="block text-gray-700 text-lg font-semibold mb-2">Enter Text or URL:</label>
+                <textarea id="qrTextInput" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-800" rows="4" placeholder="e.g., https://www.example.com or Your message here"></textarea>
+            </div>
+            <button onclick="generateQRCode()" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg mb-6">
+                Generate QR Code
+            </button>
+            <div class="mt-6 p-4 bg-gray-100 rounded-lg border border-gray-200 text-center">
+                <label class="block text-gray-700 text-lg font-semibold mb-2">Generated QR Code:</label>
+                <div id="qrcode" class="mx-auto p-4 bg-white rounded-lg shadow-inner"></div>
+                <a id="downloadQRCode" download="qrcode.png" class="mt-4 inline-block bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-lg transition duration-300 shadow-md hidden">
+                    Download QR Code
+                </a>
+            </div>
+            <button onclick="hideTool('qr-code-generator-tool')" class="mt-8 w-full bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                Back to Tools
+            </button>
+        </div>
+
+        <!-- Password Generator Tool Section -->
+        <div id="password-generator-tool" class="bg-white rounded-xl shadow-lg p-8 mb-10 hidden">
+            <h3 class="text-3xl font-bold text-gray-900 mb-6 text-center">Password Generator</h3>
+            <div class="mb-6">
+                <label for="passwordLength" class="block text-gray-700 text-lg font-semibold mb-2">Password Length:</label>
+                <input type="number" id="passwordLength" min="4" max="64" value="12" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-gray-800">
+            </div>
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="flex items-center">
+                    <input type="checkbox" id="includeUppercase" checked class="h-5 w-5 text-yellow-600 rounded focus:ring-yellow-500">
+                    <label for="includeUppercase" class="ml-2 text-gray-700 text-lg">Uppercase (A-Z)</label>
+                </div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="includeLowercase" checked class="h-5 w-5 text-yellow-600 rounded focus:ring-yellow-500">
+                    <label for="includeLowercase" class="ml-2 text-gray-700 text-lg">Lowercase (a-z)</label>
+                </div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="includeNumbers" checked class="h-5 w-5 text-yellow-600 rounded focus:ring-yellow-500">
+                    <label for="includeNumbers" class="ml-2 text-gray-700 text-lg">Numbers (0-9)</label>
+                </div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="includeSymbols" class="h-5 w-5 text-yellow-600 rounded focus:ring-yellow-500">
+                    <label for="includeSymbols" class="ml-2 text-gray-700 text-lg">Symbols (!@#$)</label>
+                </div>
+            </div>
+            <button onclick="generatePassword()" class="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg mb-6">
+                Generate Password
+            </button>
+            <div class="mt-6 p-4 bg-gray-100 rounded-lg border border-gray-200">
+                <label for="generatedPassword" class="block text-gray-700 text-lg font-semibold mb-2">Generated Password:</label>
+                <input type="text" id="generatedPassword" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg text-gray-800" readonly>
+                <button onclick="copyToClipboard('generatedPassword')" class="mt-4 bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-lg transition duration-300 shadow-md">
+                    Copy to Clipboard
+                </button>
+            </div>
+            <button onclick="hideTool('password-generator-tool')" class="mt-8 w-full bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                Back to Tools
+            </button>
+        </div>
+
+        <!-- Color Picker Tool Section -->
+        <div id="color-picker-tool" class="bg-white rounded-xl shadow-lg p-8 mb-10 hidden">
+            <h3 class="text-3xl font-bold text-gray-900 mb-6 text-center">Color Picker</h3>
+            <div class="mb-6 flex flex-col items-center">
+                <label for="colorInput" class="block text-gray-700 text-lg font-semibold mb-2">Select a Color:</label>
+                <input type="color" id="colorInput" value="#1a73e8" class="w-32 h-32 rounded-full border-4 border-pink-500 cursor-pointer mb-4" oninput="pickColor()">
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div>
+                    <label for="hexColor" class="block text-gray-700 text-lg font-semibold mb-2">HEX:</label>
+                    <input type="text" id="hexColor" class="w-full p-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-800" readonly>
+                    <button onclick="copyToClipboard('hexColor')" class="mt-2 w-full bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-lg transition duration-300 shadow-md">Copy</button>
+                </div>
+                <div>
+                    <label for="rgbColor" class="block text-gray-700 text-lg font-semibold mb-2">RGB:</label>
+                    <input type="text" id="rgbColor" class="w-full p-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-800" readonly>
+                    <button onclick="copyToClipboard('rgbColor')" class="mt-2 w-full bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-lg transition duration-300 shadow-md">Copy</button>
+                </div>
+                <div>
+                    <label for="hslColor" class="block text-gray-700 text-lg font-semibold mb-2">HSL:</label>
+                    <input type="text" id="hslColor" class="w-full p-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-800" readonly>
+                    <button onclick="copyToClipboard('hslColor')" class="mt-2 w-full bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-lg transition duration-300 shadow-md">Copy</button>
+                </div>
+            </div>
+            <button onclick="hideTool('color-picker-tool')" class="mt-8 w-full bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                Back to Tools
+            </button>
+        </div>
+
+        <!-- Markdown Editor Tool Section -->
+        <div id="markdown-editor-tool" class="bg-white rounded-xl shadow-lg p-8 mb-10 hidden">
+            <h3 class="text-3xl font-bold text-gray-900 mb-6 text-center">Markdown Editor</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label for="markdownInput" class="block text-gray-700 text-lg font-semibold mb-2">Markdown Input:</label>
+                    <textarea id="markdownInput" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-gray-800" rows="15" placeholder="Write your Markdown here..." onkeyup="renderMarkdown()"># Hello Tool Fair!
+
+This is a **Markdown Editor**.
+
+You can write:
+* Lists
+* **Bold** text
+* *Italic* text
+
+\`\`\`javascript
+// Code blocks
+function greet() {
+    console.log('Hello!');
+}
+\`\`\`
+
+> Blockquotes are also supported.
+
+Visit [Tool Fair](https://www.example.com) for more tools.
+</textarea>
+                </div>
+                <div>
+                    <label for="markdownPreview" class="block text-gray-700 text-lg font-semibold mb-2">HTML Preview:</label>
+                    <div id="markdownPreview" class="w-full p-4 border border-gray-300 rounded-lg bg-gray-50 overflow-auto markdown-preview" style="min-height: 250px; max-height: 400px;">
+                        <!-- Markdown will be rendered here -->
+                    </div>
+                </div>
+            </div>
+            <button onclick="hideTool('markdown-editor-tool')" class="mt-8 w-full bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                Back to Tools
+            </button>
+        </div>
+
+        <!-- JSON Formatter Tool Section -->
+        <div id="json-formatter-tool" class="bg-white rounded-xl shadow-lg p-8 mb-10 hidden">
+            <h3 class="text-3xl font-bold text-gray-900 mb-6 text-center">JSON Formatter</h3>
+            <div class="mb-6">
+                <label for="jsonInput" class="block text-gray-700 text-lg font-semibold mb-2">Enter JSON:</label>
+                <textarea id="jsonInput" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-800" rows="10" placeholder='{"name": "Tool Fair", "version": 1.0, "tools": ["text", "unit", "json"]}'></textarea>
+            </div>
+            <button onclick="formatJson()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg mb-6">
+                Format & Validate JSON
+            </button>
+            <div class="mt-6 p-4 bg-gray-100 rounded-lg border border-gray-200">
+                <label for="jsonOutput" class="block text-gray-700 text-lg font-semibold mb-2">Formatted JSON / Error:</label>
+                <textarea id="jsonOutput" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg text-gray-800" rows="10" readonly></textarea>
+                <button onclick="copyToClipboard('jsonOutput')" class="mt-4 bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-lg transition duration-300 shadow-md">
+                    Copy to Clipboard
+                </button>
+            </div>
+            <button onclick="hideTool('json-formatter-tool')" class="mt-8 w-full bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                Back to Tools
+            </button>
+        </div>
+
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="bg-gray-100 py-16 md:py-24 shadow-inner">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-extrabold text-gray-800 mb-8">About Tool Fair</h2>
+            <div class="max-w-3xl mx-auto text-lg text-gray-700 leading-relaxed">
+                <p class="mb-6">
+                    Welcome to **Tool Fair**, your one-stop destination for a diverse collection of online utilities designed to simplify your digital life. Our mission is to provide powerful, user-friendly, and accessible tools for everyone, from students and professionals to everyday users.
+                </p>
+                <p class="mb-6">
+                    We believe that essential tools should be free and easy to use. That's why we've built Tool Fair with a focus on intuitive design and robust functionality, ensuring you can accomplish your tasks efficiently without any hassle.
+                </p>
+                <h3 class="text-3xl font-bold text-gray-800 mb-4 mt-10">Our Founder</h3>
+                <div class="flex flex-col items-center">
+                    <img src="https://placehold.co/150x150/A0B2C8/FFFFFF?text=Founder" alt="Founder Image" class="rounded-full w-32 h-32 object-cover mb-4 shadow-md">
+                    <p class="text-xl font-semibold text-gray-900 mb-2">John Doe</p>
+                    <p class="text-gray-600 italic">Visionary & Lead Developer</p>
+                    <p class="mt-4">
+                        John Doe, a passionate advocate for open-source and digital accessibility, founded Tool Fair with the vision of creating a centralized hub for practical online tools. With years of experience in web development and a keen understanding of user needs, John is dedicated to continuously expanding and improving the Tool Fair platform.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="bg-white py-16 md:py-24 shadow-lg">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-extrabold text-gray-800 mb-8">Contact Us</h2>
+            <div class="max-w-2xl mx-auto text-lg text-gray-700 leading-relaxed">
+                <p class="mb-6">
+                    Have questions, suggestions, or feedback? We'd love to hear from you! Please feel free to reach out using the contact details below or fill out our contact form.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Get in Touch</h3>
+                        <p class="mb-2"><i class="fas fa-envelope text-blue-500 mr-3"></i> Email: <a href="mailto:support@toolfair.com" class="text-blue-600 hover:underline">support@toolfair.com</a></p>
+                        <p class="mb-2"><i class="fas fa-phone-alt text-green-500 mr-3"></i> Phone: <a href="tel:+1234567890" class="text-blue-600 hover:underline">+1 (234) 567-890</a></p>
+                        <p><i class="fas fa-map-marker-alt text-red-500 mr-3"></i> Address: 123 Tool Fair Lane, Utility City, TX 78901</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Send us a Message</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <label for="name" class="sr-only">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="email" class="sr-only">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="message" class="sr-only">Message</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Your Message" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white p-6 text-center shadow-inner mt-12">
+        <div class="container mx-auto">
+            <p>&copy; 2024 Tool Fair. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Function to show a specific tool section and hide others
+        function showTool(toolId) {
+            // Hide the main tools grid
+            document.getElementById('tools').classList.add('hidden');
+            // Show the tool sections container
+            document.getElementById('tool-sections-container').classList.remove('hidden');
+
+            // Hide all tool sections first
+            const toolSections = document.querySelectorAll('#tool-sections-container > div');
+            toolSections.forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            // Show the requested tool section
+            const targetTool = document.getElementById(toolId);
+            if (targetTool) {
+                targetTool.classList.remove('hidden');
+                // Scroll to the tool section
+                targetTool.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            // Special handling for Unit Converter to populate units on display
+            if (toolId === 'unit-converter-tool') {
+                populateUnits();
+            }
+            // Special handling for Color Picker to initialize color
+            if (toolId === 'color-picker-tool') {
+                pickColor(); // Initialize with default color
+            }
+            // Special handling for Markdown Editor to render initial content
+            if (toolId === 'markdown-editor-tool') {
+                renderMarkdown();
+            }
+        }
+
+        // Function to hide a specific tool section and show the main tools grid
+        function hideTool(toolId) {
+            document.getElementById(toolId).classList.add('hidden');
+            document.getElementById('tool-sections-container').classList.add('hidden');
+            document.getElementById('tools').classList.remove('hidden');
+            // Scroll back to the tools section
+            document.getElementById('tools').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // --- Text Manipulator Functions ---
+        function getTextInput() {
+            return document.getElementById('textInput').value;
+        }
+
+        function setOutputText(text) {
+            document.getElementById('textOutput').value = text;
+        }
+
+        function toUpperCase() {
+            const text = getTextInput();
+            setOutputText(text.toUpperCase());
+        }
+
+        function toLowerCase() {
+            const text = getTextInput();
+            setOutputText(text.toLowerCase());
+        }
+
+        function toTitleCase() {
+            const text = getTextInput();
+            // Simple title case: capitalize first letter of each word
+            const result = text.replace(/\w\S*/g, function(txt){
+                return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+            });
+            setOutputText(result);
+        }
+
+        function countWords() {
+            const text = getTextInput();
+            const words = text.trim().split(/\s+/).filter(word => word.length > 0);
+            setOutputText(`Word Count: ${words.length}`);
+        }
+
+        function countCharacters() {
+            const text = getTextInput();
+            setOutputText(`Character Count (including spaces): ${text.length}\nCharacter Count (excluding spaces): ${text.replace(/\s/g, '').length}`);
+        }
+
+        function reverseText() {
+            const text = getTextInput();
+            setOutputText(text.split('').reverse().join(''));
+        }
+
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            element.select();
+            element.setSelectionRange(0, 99999); // For mobile devices
+            document.execCommand('copy');
+            // Provide visual feedback (e.g., change button text temporarily)
+            const copyButton = element.nextElementSibling; // Assuming button is next sibling
+            if (copyButton && copyButton.tagName === 'BUTTON') {
+                const originalText = copyButton.textContent;
+                copyButton.textContent = 'Copied!';
+                setTimeout(() => {
+                    copyButton.textContent = originalText;
+                }, 2000);
+            }
+        }
+
+        // --- Unit Converter Functions ---
+        const units = {
+            length: {
+                meter: 1,
+                kilometer: 1000,
+                centimeter: 0.01,
+                millimeter: 0.001,
+                mile: 1609.34,
+                yard: 0.9144,
+                foot: 0.3048,
+                inch: 0.0254
+            },
+            temperature: {
+                celsius: {
+                    toKelvin: (c) => c + 273.15,
+                    fromKelvin: (k) => k - 273.15,
+                    toFahrenheit: (c) => (c * 9/5) + 32,
+                    fromFahrenheit: (f) => (f - 32) * 5/9
+                },
+                fahrenheit: {
+                    toKelvin: (f) => (f - 32) * 5/9 + 273.15,
+                    fromKelvin: (k) => (k - 273.15) * 9/5 + 32,
+                    toCelsius: (f) => (f - 32) * 5/9,
+                    fromCelsius: (c) => (c * 9/5) + 32
+                },
+                kelvin: {
+                    toCelsius: (k) => k - 273.15,
+                    fromCelsius: (c) => c + 273.15,
+                    toFahrenheit: (k) => (k - 273.15) * 9/5 + 32,
+                    fromFahrenheit: (f) => (f - 32) * 5/9 + 273.15
+                }
+            },
+            weight: {
+                kilogram: 1,
+                gram: 0.001,
+                milligram: 0.000001,
+                pound: 0.453592,
+                ounce: 0.0283495
+            }
+        };
+
+        function populateUnits() {
+            const unitType = document.getElementById('unitType').value;
+            const fromUnitSelect = document.getElementById('fromUnit');
+            const toUnitSelect = document.getElementById('toUnit');
+
+            // Clear previous options
+            fromUnitSelect.innerHTML = '<option value="">Select Unit</option>';
+            toUnitSelect.innerHTML = '<option value="">Select Unit</option>';
+
+            if (unitType && units[unitType]) {
+                const selectedUnits = units[unitType];
+                for (const unit in selectedUnits) {
+                    const option1 = document.createElement('option');
+                    option1.value = unit;
+                    option1.textContent = unit.charAt(0).toUpperCase() + unit.slice(1); // Capitalize first letter
+                    fromUnitSelect.appendChild(option1);
+
+                    const option2 = document.createElement('option');
+                    option2.value = unit;
+                    option2.textContent = unit.charAt(0).toUpperCase() + unit.slice(1);
+                    toUnitSelect.appendChild(option2);
+                }
+            }
+        }
+
+        function convertUnit() {
+            const value = parseFloat(document.getElementById('unitValue').value);
+            const unitType = document.getElementById('unitType').value;
+            const fromUnit = document.getElementById('fromUnit').value;
+            const toUnit = document.getElementById('toUnit').value;
+            const resultInput = document.getElementById('unitResult');
+
+            if (isNaN(value) || !unitType || !fromUnit || !toUnit) {
+                resultInput.value = 'Please fill all fields correctly.';
+                return;
+            }
+
+            let convertedValue;
+
+            if (unitType === 'temperature') {
+                // Temperature conversion is more complex, requiring specific formulas
+                if (fromUnit === toUnit) {
+                    convertedValue = value;
+                } else {
+                    // Convert from 'fromUnit' to a common base (e.g., Celsius) then to 'toUnit'
+                    let baseValue;
+                    if (fromUnit === 'celsius') baseValue = value;
+                    else if (fromUnit === 'fahrenheit') baseValue = units.temperature.fahrenheit.toCelsius(value);
+                    else if (fromUnit === 'kelvin') baseValue = units.temperature.kelvin.toCelsius(value);
+
+                    if (toUnit === 'celsius') convertedValue = baseValue;
+                    else if (toUnit === 'fahrenheit') convertedValue = units.temperature.celsius.toFahrenheit(baseValue);
+                    else if (toUnit === 'kelvin') convertedValue = units.temperature.celsius.toKelvin(baseValue);
+                }
+            } else {
+                // For other unit types, convert to base unit (e.g., meter, kilogram) then to target unit
+                const baseValue = value * units[unitType][fromUnit];
+                convertedValue = baseValue / units[unitType][toUnit];
+            }
+
+            resultInput.value = `${convertedValue.toFixed(4)} ${toUnit.charAt(0).toUpperCase() + toUnit.slice(1)}`;
+        }
+
+        // --- Image Resizer Functions ---
+        function resizeImage() {
+            const imageUpload = document.getElementById('imageUpload');
+            const newWidth = parseInt(document.getElementById('newWidth').value);
+            const newHeight = parseInt(document.getElementById('newHeight').value);
+            const imageCanvas = document.getElementById('imageCanvas');
+            const downloadLink = document.getElementById('downloadResizedImage');
+            const ctx = imageCanvas.getContext('2d');
+
+            if (!imageUpload.files || imageUpload.files.length === 0) {
+                alert("Please select an image to resize.");
+                return;
+            }
+
+            if (isNaN(newWidth) || isNaN(newHeight) || newWidth <= 0 || newHeight <= 0) {
+                alert("Please enter valid positive numbers for width and height.");
+                return;
+            }
+
+            const file = imageUpload.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    imageCanvas.width = newWidth;
+                    imageCanvas.height = newHeight;
+                    ctx.drawImage(img, 0, 0, newWidth, newHeight);
+
+                    // Show download link
+                    downloadLink.href = imageCanvas.toDataURL('image/png');
+                    downloadLink.classList.remove('hidden');
+                };
+                img.onerror = function() {
+                    alert("Could not load image. Please ensure it's a valid image file.");
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // --- QR Code Generator Functions ---
+        let qrcodeInstance = null; // To store the QR code instance
+
+        function generateQRCode() {
+            const qrTextInput = document.getElementById('qrTextInput').value;
+            const qrcodeDiv = document.getElementById('qrcode');
+            const downloadLink = document.getElementById('downloadQRCode');
+
+            if (!qrTextInput) {
+                alert("Please enter text or a URL to generate a QR code.");
+                return;
+            }
+
+            // Clear previous QR code if exists
+            qrcodeDiv.innerHTML = '';
+            if (qrcodeInstance) {
+                qrcodeInstance = null;
+            }
+
+            // Generate new QR code
+            qrcodeInstance = new QRCode(qrcodeDiv, {
+                text: qrTextInput,
+                width: 256,
+                height: 256,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+
+            // Get the canvas element generated by qrcode.js
+            // qrcode.js creates a canvas or img element inside the div
+            // We need to wait a tiny bit for the canvas to be rendered
+            setTimeout(() => {
+                const canvas = qrcodeDiv.querySelector('canvas');
+                if (canvas) {
+                    downloadLink.href = canvas.toDataURL('image/png');
+                    downloadLink.classList.remove('hidden');
+                } else {
+                    // Fallback if it generates an img tag (less common for qrcode.js)
+                    const img = qrcodeDiv.querySelector('img');
+                    if (img) {
+                        downloadLink.href = img.src;
+                        downloadLink.classList.remove('hidden');
+                    }
+                }
+            }, 100); // Small delay to ensure canvas is rendered
+        }
+
+        // --- Password Generator Functions ---
+        function generatePassword() {
+            const length = parseInt(document.getElementById('passwordLength').value);
+            const includeUppercase = document.getElementById('includeUppercase').checked;
+            const includeLowercase = document.getElementById('includeLowercase').checked;
+            const includeNumbers = document.getElementById('includeNumbers').checked;
+            const includeSymbols = document.getElementById('includeSymbols').checked;
+            const generatedPasswordInput = document.getElementById('generatedPassword');
+
+            let characters = '';
+            if (includeUppercase) characters += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            if (includeLowercase) characters += 'abcdefghijklmnopqrstuvwxyz';
+            if (includeNumbers) characters += '0123456789';
+            if (includeSymbols) characters += '!@#$%^&*()_+[]{}|;:,.<>?';
+
+            if (characters.length === 0) {
+                generatedPasswordInput.value = 'Select at least one character type.';
+                return;
+            }
+
+            let password = '';
+            for (let i = 0; i < length; i++) {
+                const randomIndex = Math.floor(Math.random() * characters.length);
+                password += characters[randomIndex];
+            }
+
+            generatedPasswordInput.value = password;
+        }
+
+        // --- Color Picker Functions ---
+        function hexToRgb(hex) {
+            const bigint = parseInt(hex.slice(1), 16);
+            const r = (bigint >> 16) & 255;
+            const g = (bigint >> 8) & 255;
+            const b = bigint & 255;
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+
+        function rgbToHsl(r, g, b) {
+            r /= 255;
+            g /= 255;
+            b /= 255;
+
+            const max = Math.max(r, g, b);
+            const min = Math.min(r, g, b);
+            let h, s, l = (max + min) / 2;
+
+            if (max === min) {
+                h = s = 0; // achromatic
+            } else {
+                const d = max - min;
+                s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+                switch (max) {
+                    case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+                    case g: h = (b - r) / d + 2; break;
+                    case b: h = (r - g) / d + 4; break;
+                }
+                h /= 6;
+            }
+
+            return `hsl(${Math.round(h * 360)}, ${Math.round(s * 100)}%, ${Math.round(l * 100)}%)`;
+        }
+
+        function pickColor() {
+            const colorInput = document.getElementById('colorInput');
+            const hexColorInput = document.getElementById('hexColor');
+            const rgbColorInput = document.getElementById('rgbColor');
+            const hslColorInput = document.getElementById('hslColor');
+
+            const hex = colorInput.value;
+            hexColorInput.value = hex;
+
+            const rgb = hexToRgb(hex);
+            rgbColorInput.value = rgb;
+
+            // Extract R, G, B values from rgb string
+            const rgbValues = rgb.match(/\d+/g).map(Number);
+            const hsl = rgbToHsl(rgbValues[0], rgbValues[1], rgbValues[2]);
+            hslColorInput.value = hsl;
+        }
+
+        // --- Markdown Editor Functions ---
+        function renderMarkdown() {
+            const markdownInput = document.getElementById('markdownInput').value;
+            const markdownPreview = document.getElementById('markdownPreview');
+            // Use marked.js to convert Markdown to HTML
+            markdownPreview.innerHTML = marked.parse(markdownInput);
+        }
+
+        // --- JSON Formatter Functions ---
+        function formatJson() {
+            const jsonInput = document.getElementById('jsonInput').value;
+            const jsonOutput = document.getElementById('jsonOutput');
+
+            try {
+                const parsedJson = JSON.parse(jsonInput);
+                jsonOutput.value = JSON.stringify(parsedJson, null, 2); // 2-space indentation
+            } catch (error) {
+                jsonOutput.value = `Invalid JSON:\n${error.message}`;
+                jsonOutput.style.color = 'red'; // Indicate error
+            } finally {
+                // Reset color if it was changed due to an error
+                if (jsonOutput.style.color === 'red' && !jsonOutput.value.startsWith('Invalid JSON')) {
+                     jsonOutput.style.color = '';
+                }
+            }
+        }
+
+        // Initial render for Markdown Editor and Color Picker when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            // Only initialize if the tool is visible by default or when it becomes visible
+            // For now, these are called when showTool is triggered.
+            // If you want them to be pre-rendered on page load (even if hidden),
+            // you'd call them here, but it's more efficient to call them when the tool is activated.
+        });
+
+    </script>
+</body>
+</html>
